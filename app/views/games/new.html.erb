@@ -1,0 +1,15 @@
+<h1>Welcome to the Longest Word Game!</h1>
+<h2>Please enter a word</h2>
+<ul>
+  <% @letters.each do |letter| %>
+  <div><li><%= letter.capitalize %></li></div>
+  <% end %>
+</ul>
+
+<p>What's the longest word?</p>
+<form action="/score" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input id=new-word type="text" name="score" placeholder="Insert a word">
+  <input type="submit">
+</form>
+
